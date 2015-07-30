@@ -6,7 +6,10 @@
             <directory>src/main/resources</directory>
         </resource>
     </resources>
+    <forceLinkClasses>
+        <pattern>com.xeiam.sundial.**</pattern>
+    </forceLinkClasses>
     <classpath>
-        <classpathentry>target/classes</classpathentry>
+        <classpathentry>target/tutum-scheduler-1.0-SNAPSHOT-jar-with-dependencies.jar</classpathentry>
     </classpath>
 </config>
