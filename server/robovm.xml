@@ -1,0 +1,12 @@
+<config>
+    <executableName>scheduler</executableName>
+    <mainClass>sillelien.scheduler.Main</mainClass>
+    <resources>
+        <resource>
+            <directory>src/main/resources</directory>
+        </resource>
+    </resources>
+    <classpath>
+        <classpathentry>target/classes</classpathentry>
+    </classpath>
+</config>
