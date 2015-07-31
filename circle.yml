@@ -8,12 +8,12 @@ dependencies:
 
   override:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - cd server && mvn clean install
-      - docker run -ti -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd)/server:/build sillelien/cyborg-wrapper:0.1  sillelien/tutum-scheduler:${CIRCLE_BRANCH} scheduler
+      - ./build.sh
+      - docker build -t sillelien/scheduler .
 
 test:
   override:
-    - docker run sillelien/tutum-scheduler:${CIRCLE_BRANCH}
+    - echo "hello"
 
 
 deployment:

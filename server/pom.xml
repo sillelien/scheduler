@@ -19,6 +19,11 @@
             <artifactId>slf4j-api</artifactId>
             <version>1.7.7</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.sillelien</groupId>
+            <artifactId>tutum-api</artifactId>
+            <version>-SNAPSHOT</version>
+        </dependency>
 
     </dependencies>
 
@@ -32,7 +37,6 @@
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
-
                 </configuration>
                 <executions>
                     <execution>
@@ -47,5 +51,16 @@
         </plugins>
     </build>
 
+    <repositories>
+        <repository>
+            <id>snapshots.jitpack.io</id>
+            <url>https://jitpack.io</url>
+            <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
 
 </project>

@@ -24,13 +24,12 @@ public class EnvVarParser {
         Map<String, String> env = System.getenv();
         for (String key : env.keySet()) {
             String value = env.get(key);
-            System.out.format("%s=%s%n", key, value);
             Matcher keyMatcher = COMPILED_NUM_SCHED.matcher(key);
-            if(keyMatcher.matches()) {
-                String service= keyMatcher.group(1);
-                String count= keyMatcher.group(2);
+            if (keyMatcher.matches()) {
+                String service = keyMatcher.group(1);
+                String count = keyMatcher.group(2);
                 Matcher cronMatcher = COMPILED_CRON.matcher(value);
-                if(cronMatcher.matches()) {
+                if (cronMatcher.matches()) {
                     String action = cronMatcher.group(2);
                     String cron = cronMatcher.group(1);
                     Map<String, Object> params = new HashMap<String, Object>();
@@ -40,16 +39,16 @@ public class EnvVarParser {
                     params.put("cron", cron);
                     String[] splitCron = cron.split(" ");
                     String dayOfWeek = splitCron[4];
-                    if(dayOfWeek.equals("*")) {
-                        dayOfWeek="?";
+                    if (dayOfWeek.equals("*")) {
+                        dayOfWeek = "?";
                     }
-                    String cronExpression = "0 " + splitCron[0]+" "+splitCron[1]+" "+splitCron[2]+" "+splitCron[3]+" "+ dayOfWeek;
-                    System.out.println("Cron is "+cronExpression);
+                    String cronExpression = "0 " + splitCron[0] + " " + splitCron[1] + " " + splitCron[2] + " " + splitCron[3] + " " + dayOfWeek;
+                    System.out.println(cron + " " + action);
                     params.put("cronUsed", cronExpression);
                     SundialJobScheduler.addJob(key, TutumExec.class.getCanonicalName(), params);
                     SundialJobScheduler.addCronTrigger(key + "-Trigger", key, cronExpression);
                 } else {
-                    System.out.println("Invalid CRON expression "+value);
+                    System.out.println("Invalid CRON expression " + value);
                 }
             }
         }

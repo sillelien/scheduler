@@ -1,7 +1,11 @@
 package sillelien.scheduler;
 
+import com.xeiam.sundial.Job;
 import com.xeiam.sundial.exceptions.JobInterruptException;
+import me.neilellis.dollar.api.var;
+import sillelien.tutum.*;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -9,15 +13,15 @@ import java.util.Map;
  *
  * @author neil@cazcade.com
  */
-public class TutumExec extends com.xeiam.sundial.Job  {
+public class TutumExec extends Job  {
+    private static final Tutum api = new TutumAPI();
+
     @Override
     public void doRun() throws JobInterruptException {
-        System.out.printf("Running");
-        try {
-            Map<String, Object> map = this.getJobContext().map;
-            System.out.println(map);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        TutumService service = api.getServiceByName("tutum-api-exec-test");
+        String containerUrl = service.containers().get(0);
+        TutumContainer container = api.getContainer(containerUrl);
+        TutumExecResponse response = api.exec(container, String.valueOf(getJobContext().get("action")));
+        System.out.println(response);
     }
 }
