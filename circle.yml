@@ -8,12 +8,10 @@ dependencies:
 
   override:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - ./build.sh
-      - docker build -t sillelien/scheduler .
 
 test:
   override:
-    - echo "hello"
+    - ./build.sh
 
 
 deployment:
