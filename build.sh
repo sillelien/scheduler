@@ -2,7 +2,7 @@
 set -ex
 cd server
 mvn clean install -Dmaven.test.skip=true
-docker pull sillelien/java-slim
+docker pull sillelien/java-slim:0.1
 if [ -e /run/docker.sock ]
 then
     socket=/run/docker.sock
