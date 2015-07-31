@@ -10,7 +10,7 @@ else
     socket=/var/run/docker.sock
 fi
 
-if [ -n "$CIRCLE_CI" ]
+if [ -n "$CIRCLECI" ]
 then
     image="sillelien/scheduler:${CIRCLE_BRANCH}"
 else
