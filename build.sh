@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -ex
 cd server
 mvn clean install -Dmaven.test.skip=true
 docker pull sillelien/java-slim
@@ -16,5 +17,5 @@ else
     image=scheduler
 fi
 
-docker run -ti -v ${socket}:/tmp/docker.sock -v $(pwd)/:/build/ sillelien/java-slim ${image} scheduler target/tutum-scheduler-1.0-SNAPSHOT-jar-with-dependencies.jar src/main/resources sillelien.scheduler.Main
+docker run -ti -v ${socket}:/tmp/docker.sock -v $(pwd)/:/build/ sillelien/java-slim:0.1 ${image} scheduler target/tutum-scheduler-1.0-SNAPSHOT-jar-with-dependencies.jar src/main/resources sillelien.scheduler.Main
 cd -
