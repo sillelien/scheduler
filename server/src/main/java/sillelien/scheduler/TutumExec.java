@@ -2,7 +2,7 @@ package sillelien.scheduler;
 
 import com.xeiam.sundial.Job;
 import com.xeiam.sundial.exceptions.JobInterruptException;
-import me.neilellis.dollar.api.var;
+import com.sillelien.dollar.api.var;
 import sillelien.tutum.*;
 
 import java.util.List;
