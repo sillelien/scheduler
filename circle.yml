@@ -4,22 +4,48 @@ machine:
   java:
     version: oraclejdk8
 
+machine:
+  services:
+    - docker
 
 dependencies:
   cache_directories:
     - "~/docker"
 
   override:
+      - sudo -H pip install docker-compose
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
 
 test:
   override:
-    - ./build.sh
-
+    - docker-compose build && docker-compose up
 
 deployment:
-  all:
-    branch: /.*/
-    commands:
-      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS 
-      - docker push sillelien/scheduler:${CIRCLE_BRANCH}
+  staging:
+      branch: staging
+      commands:
+        - git config --global user.email "hello@neilellis.me"
+        - git config --global user.name "Neil Ellis"
+        - git reset HEAD --hard
+        - git clean -fd
+        - git checkout master
+        - git pull
+        - git merge staging -m "Auto merge"
+        - git push
+        - 'git commit -a -m "Promotion from staging" || :'
+        - "git tag ${release} || :"
+        - git push --tags
+        - git push origin master
+
+  production:
+      branch: master
+      commands:
+          - cd builder && docker build -t sillelien/scheduler .
+          - docker push sillelien/scheduler
+
+
+  development:
+      branch: dev
+      commands:
+          - cd builder && docker build -t sillelien/scheduler:dev .
+          - docker push sillelien/scheduler:dev
