@@ -1,6 +1,9 @@
 machine:
   services:
     - docker
+  environment:
+    release: 0.0.${CIRCLE_BUILD_NUM}
+    MAVEN_OPTS: "-Xmx1g -DbuildNumber=${CIRCLE_BUILD_NUM} "
   java:
     version: oraclejdk8
 
