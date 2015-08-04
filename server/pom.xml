@@ -20,9 +20,9 @@
             <version>1.7.7</version>
         </dependency>
         <dependency>
-            <groupId>com.github.sillelien</groupId>
+            <groupId>com.sillelien</groupId>
             <artifactId>tutum-api</artifactId>
-            <version>f453300d64</version>
+            <version>0.0.32</version>
         </dependency>
 
     </dependencies>
@@ -85,8 +85,8 @@
 
     <repositories>
         <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
+            <id>s3-releases</id>
+            <url>http://sillelien-maven-repo.s3-website-eu-west-1.amazonaws.com/release</url>
         </repository>
     </repositories>
 
