@@ -1,6 +1,6 @@
 
 server:
-  build: server
+  build: .
   links:
     - test:test
 
