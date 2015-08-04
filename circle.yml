@@ -41,12 +41,10 @@ deployment:
   production:
       branch: master
       commands:
-          - cd builder && docker build -t sillelien/scheduler .
-          - docker push sillelien/scheduler
+          - docker push sillelien/scheduler:${CIRCLE_BRANCH}
 
 
   development:
       branch: dev
       commands:
-          - cd builder && docker build -t sillelien/scheduler:dev .
-          - docker push sillelien/scheduler:dev
+          - docker push sillelien/scheduler:${CIRCLE_BRANCH}
