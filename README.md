@@ -1,7 +1,7 @@
 # Scheduler
 
 
-**If you use this image please consider giving it a star on [Github](https://github.com/Sillelien/scheduler)**
+**If you use this image please consider giving it a star on [Github](https://github.com/sillelien/scheduler)**
 
 Please use the tagged version:
 
@@ -20,7 +20,7 @@ FROM sillelien/scheduler:master
 
 [![Image Layers](https://badge.imagelayers.io/sillelien/scheduler.svg)](https://imagelayers.io/?images=sillelien/scheduler:master 'Get your own badge on imagelayers.io') 
 
-[![Circle CI](https://circleci.com/gh/Sillelien/scheduler/tree/master.svg?style=svg)](https://circleci.com/gh/Sillelien/scheduler/tree/master)
+[![Circle CI](https://circleci.com/gh/sillelien/scheduler/tree/master.svg?style=svg)](https://circleci.com/gh/sillelien/scheduler/tree/master)
 
 [![GitHub License](https://img.shields.io/github/license/sillelien/scheduler.svg)](https://raw.githubusercontent.com/sillelien/scheduler/master/LICENSE)
 
