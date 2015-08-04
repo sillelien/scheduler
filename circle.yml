@@ -20,7 +20,7 @@ dependencies:
 
 test:
   override:
-    - docker-compose build && docker-compose up
+    -  docker run -ti sillelien/scheduler:${CIRCLE_BRANCH}
 
 deployment:
   staging:
