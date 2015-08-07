@@ -1,5 +1,7 @@
 # Scheduler
 
+[![Join the chat at https://gitter.im/sillelien/scheduler](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sillelien/scheduler?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 
 **If you use this image please consider giving it a star on [Github](https://github.com/sillelien/scheduler)**
 
