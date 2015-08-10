@@ -1,18 +1,16 @@
 # Scheduler
 
+Scheduler is very much a work in progress. It's aim is to provide work scheduling for distributed Docker based systems.
 
-**If you use this image please consider giving it a star on [Github](https://github.com/sillelien/scheduler)**
+${BLURB}
 
-Please use the tagged version:
+Please use a tagged version:
 
 ```
-FROM sillelien/scheduler:master
+FROM sillelien/scheduler:${RELEASE}
 ```
 
 ## Environment Variables
-
-
-
 
 ## Badges
 

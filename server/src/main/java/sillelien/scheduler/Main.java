@@ -15,6 +15,7 @@ public class Main {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         SundialJobScheduler.startScheduler("sillelien.scheduler");
         EnvVarParser.parse();
+        YamlParser.parse();
         new CompletableFuture().get();
     }
 }

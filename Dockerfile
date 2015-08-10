@@ -1,4 +1,10 @@
-FROM sillelien/jess:master
-COPY out /app
-CMD /app/scheduler
+FROM sillelien/jessiej:0.4.127
 
+RUN find /etc -name "*.sh" -exec chmod a+x {} \;
+
+RUN apt-get install -y git
+
+COPY update.sh /etc/services.d/update/run
+RUN chmod a+x /etc/services.d/update/run
+COPY server/target/tutum-scheduler-1.0-SNAPSHOT.jar /app/scheduler.jar
+CMD java -jar /app/scheduler.jar

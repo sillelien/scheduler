@@ -14,7 +14,7 @@ import java.util.Map;
  * @author neil@cazcade.com
  */
 public class TutumExec extends Job  {
-    private static final Tutum api = new TutumAPI();
+    private static final Tutum api = TutumAPI.instance();
 
     @Override
     public void doRun() throws JobInterruptException {

@@ -21,8 +21,19 @@
         </dependency>
         <dependency>
             <groupId>com.sillelien</groupId>
+            <artifactId>dollar-core</artifactId>
+            <version>0.1.71</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sillelien</groupId>
             <artifactId>tutum-api</artifactId>
-            <version>0.0.32</version>
+            <version>0.1.92</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.sillelien</groupId>
+                    <artifactId>dollar-core</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
     </dependencies>
@@ -51,7 +62,8 @@
                         <configuration>
                             <minimizeJar>true</minimizeJar>
                             <transformers>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <mainClass>sillelien.scheduler.Main</mainClass>
                                 </transformer>
                             </transformers>
