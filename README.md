@@ -1,3 +1,5 @@
+${HEADER}
+
 # Scheduler ${STATE_EXPERIMENTAL}
 
 Scheduler is very much a work in progress. It's aim is to provide work scheduling for distributed Docker based systems.
@@ -23,3 +25,5 @@ FROM sillelien/scheduler:${RELEASE}
 [![GitHub License](https://img.shields.io/github/license/sillelien/scheduler.svg)](https://raw.githubusercontent.com/sillelien/scheduler/master/LICENSE)
 
 [![GitHub Issues](https://img.shields.io/github/issues/sillelien/scheduler.svg)](https://github.com/sillelien/scheduler/issues)
+
+${FOOTER}
