@@ -19,7 +19,7 @@ Please contact us through chat or through GitHub Issues.
 Please use a tagged version:
 
 ```
-FROM sillelien/scheduler:0.0.39
+FROM sillelien/scheduler:0.0.41
 ```
 
 ## Environment Variables
@@ -38,4 +38,6 @@ FROM sillelien/scheduler:0.0.39
 
 --------
 
-(c) 2015 Sillelien all rights reserved. Please see [![GitHub License](https://img.shields.io/github/license/sillelien/configurator.svg)](https://raw.githubusercontent.com/sillelien/configurator/master/LICENSE) for license details of this project. Please visit http://sillelien.com for help and commercial support or raise issues here ![GitHub Issues](https://img.shields.io/github/issues/sillelien/configurator.svg)](https://github.com/sillelien/configurator/issues).
+[![GitHub License](https://img.shields.io/github/license/sillelien/scheduler.svg)](https://raw.githubusercontent.com/sillelien/scheduler/master/LICENSE)
+
+(c) 2015 Sillelien all rights reserved. Please see [LICENSE](https://raw.githubusercontent.com/sillelien/scheduler/master/LICENSE) for license details of this project. Please visit http://sillelien.com for help and commercial support or raise issues on [GitHub](https://github.com/sillelien/scheduler/issues).
