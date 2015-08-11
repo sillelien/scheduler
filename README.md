@@ -22,8 +22,4 @@ FROM sillelien/scheduler:${RELEASE}
 
 [![Circle CI](https://circleci.com/gh/sillelien/scheduler/tree/master.svg?style=svg)](https://circleci.com/gh/sillelien/scheduler/tree/master)
 
-[![GitHub License](https://img.shields.io/github/license/sillelien/scheduler.svg)](https://raw.githubusercontent.com/sillelien/scheduler/master/LICENSE)
-
-[![GitHub Issues](https://img.shields.io/github/issues/sillelien/scheduler.svg)](https://github.com/sillelien/scheduler/issues)
-
 ${FOOTER}
