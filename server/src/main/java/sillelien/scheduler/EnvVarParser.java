@@ -1,6 +1,7 @@
 package sillelien.scheduler;
 
 import com.xeiam.sundial.SundialJobScheduler;
+import sillelien.scheduler.tasks.TutumExec;
 
 import java.util.HashMap;
 import java.util.Map;

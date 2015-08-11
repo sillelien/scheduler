@@ -1,4 +1,4 @@
-package sillelien.scheduler;
+package sillelien.scheduler.tasks;
 
 import com.xeiam.sundial.Job;
 import com.xeiam.sundial.exceptions.JobInterruptException;
@@ -21,7 +21,7 @@ public class TutumExec extends Job  {
         TutumService service = api.getServiceByName("tutum-api-exec-test");
         String containerUrl = service.containers().get(0);
         TutumContainer container = api.getContainer(containerUrl);
-        TutumExecResponse response = api.exec(container, String.valueOf(getJobContext().get("action")));
+        TutumExecResponse response = api.exec(container, String.valueOf(getJobContext().get("command")));
         System.out.println(response);
     }
 }
