@@ -19,7 +19,7 @@ Please contact us through chat or through GitHub Issues.
 Please use a tagged version:
 
 ```
-FROM sillelien/scheduler:0.0.51
+FROM sillelien/scheduler:0.0.53
 ```
 
 ## Creating a Schedule
@@ -36,7 +36,7 @@ worker:
 
 
 scheduler:
-  image: sillelien/scheduler:0.0.51
+  image: sillelien/scheduler:0.0.53
   links:
     - test:test
     - scserver:scserver
