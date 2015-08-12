@@ -18,10 +18,10 @@ public class TutumExec extends Job  {
 
     @Override
     public void doRun() throws JobInterruptException {
-        TutumService service = api.getServiceByName("tutum-api-exec-test");
+        TutumService service = api.getServiceByName(String.valueOf(getJobContext().get("service")).trim());
         String containerUrl = service.containers().get(0);
         TutumContainer container = api.getContainer(containerUrl);
-        TutumExecResponse response = api.exec(container, String.valueOf(getJobContext().get("command")));
+        TutumExecResponse response = api.exec(container, String.valueOf(getJobContext().get("command")).trim());
         System.out.println(response);
     }
 }

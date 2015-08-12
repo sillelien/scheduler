@@ -18,12 +18,13 @@ public class VarBasedScheduler {
     }
 
     public void start() {
-        var service = schedule.$("service");
+        String serviceString = schedule.$("service").toString().trim();
         var action = schedule.$("action");
         var actionType = schedule.$("action").$("type");
         if (schedule.$has("cron").isTrue()) {
-            SundialJobScheduler.addJob(scheduleName, "sillelien.scheduler.tasks."+actionType.$default($("TutumExec")), action.toMap());
-            SundialJobScheduler.addCronTrigger(scheduleName + "-Trigger", scheduleName, schedule.$("cron").toString());
+            SundialJobScheduler.addJob(scheduleName, "sillelien.scheduler.tasks."+actionType.$default($("TutumExec")), schedule.toMap());
+            String cronString = schedule.$("cron").toString();
+            SundialJobScheduler.addCronTrigger(scheduleName + "-Trigger", scheduleName, CronUtil.convertCron(cronString));
         }
     }
 }

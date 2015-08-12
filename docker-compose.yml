@@ -11,7 +11,7 @@ test:
 
 
 scserver:
-  image: sillelien/sc-server:0.0.40
+  image: sillelien/sc-server:0.0.56
   volumes:
     - tmp/config/server:/repo
   ports:
@@ -19,7 +19,7 @@ scserver:
     - "9418"
 
 sceditor:
-  image: sillelien/sc-editor:0.0.40
+  image: sillelien/sc-editor:0.0.56
   volumes:
     - tmp/config/editor:/config
   links:
