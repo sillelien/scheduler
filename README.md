@@ -14,7 +14,7 @@ FROM sillelien/scheduler:${RELEASE}
 
 ## Creating a Schedule
 
-Sillelien Scheduler, uses Sillelien Configurator to configure schedules. Configurator is simply a combination of a git repository and an editor to allow you to alter config in Docker images in a sensible and permanent manner.
+Sillelien Scheduler, uses [Sillelien Configurator](https://github.com/sillelien/configurator) to configure schedules. Configurator is simply a combination of a git repository and an editor to allow you to alter config in Docker images in a sensible and permanent manner.
 
 Below is a typical docker-compose file
 
