@@ -1,0 +1,28 @@
+
+scheduler:
+  image: sillelien/scheduler
+  links:
+    - test:test
+    - scserver:scserver
+
+worker:
+  image: sillelien/jessie
+  command: "sleep 1000000"
+
+
+scserver:
+  image: sillelien/sc-server:0.0.56
+  volumes:
+    - /var/sc/repo:/repo
+  ports:
+    - "1500"
+    - "9418"
+
+sceditor:
+  image: sillelien/sc-editor:0.0.56
+  volumes:
+    - /var/sc/editor/config:/config
+  links:
+    - scserver:scserver
+  ports:
+    - "8080:8080"
