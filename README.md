@@ -2,6 +2,8 @@
 
 # Scheduler [![Experimental](https://img.shields.io/badge/Status-Experimental_or_POC-red.svg?style=flat)](http://github.com/sillelien/scheduler)
 
+[![Screenshot 1](https://raw.githubusercontent.com/sillelien/scheduler/master/.assets/screenshot-1.png)](https://raw.githubusercontent.com/sillelien/scheduler/master/.assets/screenshot-1.png)
+
 Scheduler is very much a work in progress. It's aim is to provide work scheduling for distributed Docker based systems.
 
 -------
