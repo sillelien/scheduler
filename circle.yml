@@ -32,7 +32,10 @@ deployment:
   production:
       branch: master
       commands:
-          - docker push sillelien/scheduler:${CIRCLE_BRANCH}
+          - docker tag sillelien/scheduler:${CIRCLE_BRANCH} sillelien/scheduler
+          - docker tag sillelien/scheduler:${CIRCLE_BRANCH} sillelien/scheduler:$(cat .release)
+          - docker push sillelien/scheduler
+          - docker push sillelien/scheduler:$(cat .release)
 
 
   development:

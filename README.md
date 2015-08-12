@@ -50,7 +50,9 @@ sceditor:
 
 ```
 
-Here you can see the three parts: the Configurator server, the Configurator editor and the Scheduler. The editor allows you to create and modify Scheduler YAML files. When you first start up this docker-compose arrangement Scheduler will create the appropriate directories and files for you to use.
+Here you can see the three parts: the Configurator server, the Configurator editor and the Scheduler. The editor allows you to create and modify Scheduler YAML files, the server stores them in a git repository and Scheduler uses them to Schedule work. 
+
+When you first start up this docker-compose arrangement Scheduler will create the appropriate directories and files for you to use.
 
 ${TUTUM}
 

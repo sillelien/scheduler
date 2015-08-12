@@ -9,22 +9,31 @@ import static com.sillelien.dollar.api.DollarStatic.$;
  * @author hello@neilellis.me
  */
 public class VarBasedScheduler {
-    private final String scheduleName;
-    private var schedule;
+    private final String jobName;
+    private var job;
 
-    public VarBasedScheduler(var schedule) {
-        this.schedule = schedule.getPairValue();
-        this.scheduleName = schedule.getPairKey().toString();
+    public VarBasedScheduler(var job) {
+        this.job = job.getPairValue();
+        this.jobName = job.getPairKey().toString();
     }
 
     public void start() {
-        String serviceString = schedule.$("service").toString().trim();
-        var action = schedule.$("action");
-        var actionType = schedule.$("action").$("type");
-        if (schedule.$has("cron").isTrue()) {
-            SundialJobScheduler.addJob(scheduleName, "sillelien.scheduler.tasks."+actionType.$default($("TutumExec")), schedule.toMap());
-            String cronString = schedule.$("cron").toString();
-            SundialJobScheduler.addCronTrigger(scheduleName + "-Trigger", scheduleName, CronUtil.convertCron(cronString));
+        String serviceString = job.$("service").toString().trim();
+        var action = job.$("action");
+        var actionType = job.$("action").$("type");
+        if (job.$has("cron").isTrue()) {
+            if(SundialJobScheduler.getAllJobNames().contains(jobName)) {
+                System.out.println("Removing job "+ jobName +" prior to re-adding.");
+                SundialJobScheduler.removeJob(jobName);
+            }
+            SundialJobScheduler.addJob(jobName, "sillelien.scheduler.tasks."+actionType.$default($("TutumExec")), job.toMap());
+            String cronString = job.$("cron").toString();
+            String triggerName = jobName + "-Trigger";
+            if(SundialJobScheduler.getAllJobsAndTriggers().containsKey(triggerName)) {
+                System.out.println("Removing trigger "+triggerName+" prior to re-adding.");
+                SundialJobScheduler.removeTrigger(triggerName);
+            }
+            SundialJobScheduler.addCronTrigger(triggerName, jobName, CronUtil.convertCron(cronString));
         }
     }
 }
