@@ -1,8 +1,7 @@
-
 scheduler:
   image: sillelien/scheduler
   links:
-    - test:test
+    - worker:worker
     - scserver:scserver
 
 worker:
