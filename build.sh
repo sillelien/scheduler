@@ -19,7 +19,7 @@ fi
 
 cd -
 
-docker build -t $image .
+
 
 #docker run -ti -v ${socket}:/tmp/docker.sock -v $(pwd)/:/build/ sillelien/java-slim:0.1 ${image} scheduler target/tutum-scheduler-1.0-SNAPSHOT.jar src/main/resources sillelien.scheduler.Main
 

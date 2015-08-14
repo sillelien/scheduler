@@ -18,6 +18,7 @@ dependencies:
       - sudo -H pip install docker-compose
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - ./build.sh
+      - docker build -t sillelien/scheduler:${CIRCLE_BRANCH} .
 
 test:
   override:
