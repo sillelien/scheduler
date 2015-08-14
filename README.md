@@ -85,7 +85,7 @@ The action should contain `type: tutum_start_service`, the `service` field is th
 
 [![Docker Registry](https://img.shields.io/docker/pulls/sillelien/scheduler.svg)](https://registry.hub.docker.com/u/sillelien/scheduler)
 
-[![Image Layers](https://badge.imagelayers.io/sillelien/scheduler.svg)](https://imagelayers.io/?images=sillelien/scheduler:master 'Get your own badge on imagelayers.io') 
+[![Image Layers](https://badge.imagelayers.io/sillelien/scheduler.svg)](https://imagelayers.io/?images=sillelien/schedulerDocs 'Get your own badge on imagelayers.io') 
 
 [![Circle CI](https://circleci.com/gh/sillelien/scheduler/tree/master.svg?style=svg)](https://circleci.com/gh/sillelien/scheduler/tree/master)
 
