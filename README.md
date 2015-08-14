@@ -1,17 +1,27 @@
-${HEADER}
 
-# Scheduler ${STATE_PRE_ALPHA}
+
+# Scheduler [![Pre Alpha](https://img.shields.io/badge/Status-Pre_Alpha-yellow.svg?style=flat)](http://github.com/sillelien/scheduler)
 
 [![Screenshot 1](https://raw.githubusercontent.com/sillelien/scheduler/master/.assets/screenshot-1.png)](https://raw.githubusercontent.com/sillelien/scheduler/master/.assets/screenshot-1.png)
 
 Scheduler is very much a work in progress. It's aim is to provide work scheduling for distributed Docker based systems.
 
-${BLURB}
+-------
+
+**If you use this project please consider giving us a star on [GitHub](http://github.com/sillelien/scheduler). Also if you can spare 30 secs of your time please let us know your priorities here https://sillelien.wufoo.com/forms/zv51vc704q9ary/  - thanks, that really helps!**
+
+Please contact us through chat or through GitHub Issues.
+
+[![GitHub Issues](https://img.shields.io/github/issues/sillelien/scheduler.svg)](https://github.com/sillelien/scheduler/issues)
+
+[![Join the chat at https://gitter.im/sillelien/scheduler](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sillelien/scheduler?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+-------
 
 Please use a tagged version:
 
 ```
-FROM sillelien/scheduler:${RELEASE}
+FROM sillelien/scheduler:0.1.65
 ```
 
 ## Setting Up
@@ -28,7 +38,7 @@ worker:
 
 
 scheduler:
-  image: sillelien/scheduler:${RELEASE}
+  image: sillelien/scheduler:0.1.65
   links:
     - test:test
     - scserver:scserver
@@ -56,7 +66,7 @@ Here you can see the three parts: the Configurator server, the Configurator edit
 
 When you first start up this docker-compose arrangement Scheduler will create the appropriate directories and files for you to use.
 
-${TUTUM}
+[![Deploy to Tutum](https://s.tutum.co/deploy-to-tutum.svg)](https://dashboard.tutum.co/stack/deploy/)
 
 ## Creating a Job
 
@@ -85,4 +95,8 @@ The action should contain `type: tutum_exec`, the service field is the name of t
 
 [![Circle CI](https://circleci.com/gh/sillelien/scheduler/tree/master.svg?style=svg)](https://circleci.com/gh/sillelien/scheduler/tree/master)
 
-${FOOTER}
+--------
+
+[![GitHub License](https://img.shields.io/github/license/sillelien/scheduler.svg)](https://raw.githubusercontent.com/sillelien/scheduler/master/LICENSE)
+
+(c) 2015 Sillelien all rights reserved. Please see [LICENSE](https://raw.githubusercontent.com/sillelien/scheduler/master/LICENSE) for license details of this project. Please visit http://sillelien.com for help and commercial support or raise issues on [GitHub](https://github.com/sillelien/scheduler/issues).
