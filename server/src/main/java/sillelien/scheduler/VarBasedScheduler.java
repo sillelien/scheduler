@@ -1,6 +1,5 @@
 package sillelien.scheduler;
 
-import com.google.common.base.CaseFormat;
 import com.sillelien.dollar.api.var;
 import com.xeiam.sundial.SundialJobScheduler;
 
@@ -22,7 +21,7 @@ public class VarBasedScheduler {
 
     public void start() {
         var action = job.$("action");
-        if(!action.string()) {
+        if(!action.map()) {
             throw new JobParseException("Could not parse the action section");
         }
         var actionType = job.$("action").$("type").$default($("tutum_exec"));
@@ -33,14 +32,8 @@ public class VarBasedScheduler {
                 SundialJobScheduler.removeJob(jobName);
             }
 
-            String actionClass = "sillelien.scheduler.tasks." + CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, actionType.toString());
-            try {
-                Class.forName(actionClass);
-            } catch (ClassNotFoundException e) {
-                throw new JobParseException("Unrecognized action type: "+actionType);
 
-            }
-            SundialJobScheduler.addJob(jobName, actionClass, job.toMap());
+            SundialJobScheduler.addJob(jobName, TaskFactory.task(actionType.toString()).getName(), job.toMap());
             String cronString = job.$("cron").toString();
             String triggerName = jobName + "-Trigger";
             if (SundialJobScheduler.getAllJobsAndTriggers().containsKey(triggerName)) {

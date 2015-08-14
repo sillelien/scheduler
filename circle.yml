@@ -2,7 +2,7 @@ machine:
   services:
     - docker
   environment:
-    RELEASE: 0.0.${CIRCLE_BUILD_NUM}
+    RELEASE: 0.1.${CIRCLE_BUILD_NUM}
     MAVEN_OPTS: "-Xmx1g -DbuildNumber=${CIRCLE_BUILD_NUM} "
     JAVA_HOME: /usr/lib/jvm/jdk1.8.0
   java:

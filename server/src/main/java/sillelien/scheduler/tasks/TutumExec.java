@@ -4,6 +4,7 @@ import com.xeiam.sundial.Job;
 import com.xeiam.sundial.exceptions.JobInterruptException;
 import com.sillelien.dollar.api.var;
 import sillelien.scheduler.JobParseException;
+import sillelien.scheduler.TaskFactory;
 import sillelien.tutum.*;
 
 import java.util.List;
@@ -16,6 +17,7 @@ import java.util.Map;
  */
 public class TutumExec extends Job  {
     private static final Tutum api = TutumAPI.instance();
+
 
     @Override
     public void doRun() throws JobInterruptException {

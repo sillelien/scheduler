@@ -1,6 +1,6 @@
 ${HEADER}
 
-# Scheduler ${STATE_EXPERIMENTAL}
+# Scheduler ${STATE_PRE_ALPHA}
 
 [![Screenshot 1](https://raw.githubusercontent.com/sillelien/scheduler/master/.assets/screenshot-1.png)](https://raw.githubusercontent.com/sillelien/scheduler/master/.assets/screenshot-1.png)
 

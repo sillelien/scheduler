@@ -3,7 +3,7 @@
 git config --global user.email "scheduler-server@$(hostname)"
 git config --global user.name "Sillelien Scheduler Server @ $(hostname)"
 
-set -ex
+set -e
 
 if [ ! -d /config/.git ]
 then
