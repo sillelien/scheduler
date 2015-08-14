@@ -81,11 +81,15 @@ date_job:
     command: "date"
 ```
 
-Currently the supported action types are `tutum_exec` only. 
+Currently the supported action types are `tutum_exec`, `tutum_start_service` and `debug` only. 
 
 ### tutum_exec
 
-The action should contain `type: tutum_exec`, the service field is the name of the Tutum service to use and the command is the command string to be executed on that service.
+The action should contain `type: tutum_exec`, the `service field` is the name of the Tutum service to use and the `command` is the command string to be executed on that service.
+
+### tutum_start_service
+
+The action should contain `type: tutum_start_service`, the `service` field is the name of the Tutum service to start.
 
 ## Badges
 

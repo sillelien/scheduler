@@ -1,7 +1,8 @@
 package sillelien.scheduler;
 
 import sillelien.scheduler.tasks.DebugTask;
-import sillelien.scheduler.tasks.TutumExec;
+import sillelien.scheduler.tasks.TutumExecTask;
+import sillelien.scheduler.tasks.TutumStartServiceTask;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,7 +15,8 @@ public class TaskFactory {
     private static Map<String,Class> map= new HashMap<>();
     static {
         addTask("debug", DebugTask.class);
-        addTask("tutum_exec", TutumExec.class);
+        addTask("tutum_exec", TutumExecTask.class);
+        addTask("tutum_start_service", TutumStartServiceTask.class);
     }
 
 

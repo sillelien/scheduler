@@ -1,7 +1,5 @@
 FROM sillelien/jessiej:0.4.127
 
-RUN find /etc -name "*.sh" -exec chmod a+x {} \;
-
 RUN apt-get install -y git
 
 COPY update.sh /etc/services.d/update/run

@@ -1,7 +1,7 @@
 package sillelien.scheduler;
 
 import com.xeiam.sundial.SundialJobScheduler;
-import sillelien.scheduler.tasks.TutumExec;
+import sillelien.scheduler.tasks.TutumExecTask;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,7 +38,7 @@ public class EnvVarParser {
                     String cronExpression = CronUtil.convertCron(cron);
                     System.out.println(cron + " " + action);
                     params.put("cronUsed", cronExpression);
-                    SundialJobScheduler.addJob(key, TutumExec.class.getCanonicalName(), params);
+                    SundialJobScheduler.addJob(key, TutumExecTask.class.getCanonicalName(), params);
                     SundialJobScheduler.addCronTrigger(key + "-Trigger", key, cronExpression);
                 } else {
                     System.out.println("Invalid CRON expression " + value);
