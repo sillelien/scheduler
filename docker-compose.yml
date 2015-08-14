@@ -13,7 +13,7 @@ test:
 scserver:
   image: sillelien/sc-server:0.0.56
   volumes:
-    - tmp/config/server:/repo
+    - ./tmp/config/server:/repo
   ports:
     - "1500"
     - "9418"
@@ -21,7 +21,7 @@ scserver:
 sceditor:
   image: sillelien/sc-editor:0.0.56
   volumes:
-    - tmp/config/editor:/config
+    - ./tmp/config/editor:/config
   links:
     - scserver:scserver
   ports:

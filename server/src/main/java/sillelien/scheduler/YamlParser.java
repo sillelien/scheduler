@@ -54,7 +54,11 @@ public class YamlParser {
         var config = $yaml(file);
         ImmutableList<var> jobs = config.$list();
         for (var job : jobs) {
-            new VarBasedScheduler(job).start();
+            try {
+                new VarBasedScheduler(job).start();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         System.out.println("Config " + config.toJsonString());
     }
