@@ -14,7 +14,6 @@ dependencies:
 
   override:
       - cd ~ && git clone https://github.com/sillelien/build-utils.git && chmod a+x ~/build-utils/*.sh
-      -  ls -la /usr/lib/jvm
       - sudo -H pip install docker-compose
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - ./build.sh
