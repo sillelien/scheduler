@@ -8,8 +8,6 @@ import java.util.regex.Pattern;
  * @author hello@neilellis.me
  */
 public class CronUtil {
-    public static final String NUMERIZED_SCHEDULE = "^(\\w*)_CRON_SCHEDULE_([0-9]+)$";
-    public static final Pattern COMPILED_NUM_SCHED = Pattern.compile(NUMERIZED_SCHEDULE);
     public static final String CRON_PATTERN = "^(\\S+\\s+\\S+\\s+\\S+\\s+\\S+\\s+\\S)+\\s+(.*)$";
     public static final Pattern COMPILED_CRON = Pattern.compile(CRON_PATTERN);
 

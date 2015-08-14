@@ -6,6 +6,7 @@ import sillelien.scheduler.tasks.TutumExec;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * (c) 2015 Cazcade Limited
@@ -14,11 +15,14 @@ import java.util.regex.Matcher;
  */
 public class EnvVarParser {
 
+    public static final String NUMERIZED_SCHEDULE = "^(\\w*)_CRON_SCHEDULE_([0-9]+)$";
+    public static final Pattern COMPILED_NUM_SCHED = Pattern.compile(NUMERIZED_SCHEDULE);
+
     public static void parse() {
         Map<String, String> env = System.getenv();
         for (String key : env.keySet()) {
             String value = env.get(key);
-            Matcher keyMatcher = CronUtil.COMPILED_NUM_SCHED.matcher(key);
+            Matcher keyMatcher = COMPILED_NUM_SCHED.matcher(key);
             if (keyMatcher.matches()) {
                 String service = keyMatcher.group(1);
                 String count = keyMatcher.group(2);

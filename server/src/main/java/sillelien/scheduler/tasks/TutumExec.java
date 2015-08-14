@@ -3,6 +3,7 @@ package sillelien.scheduler.tasks;
 import com.xeiam.sundial.Job;
 import com.xeiam.sundial.exceptions.JobInterruptException;
 import com.sillelien.dollar.api.var;
+import sillelien.scheduler.JobParseException;
 import sillelien.tutum.*;
 
 import java.util.List;
@@ -18,10 +19,19 @@ public class TutumExec extends Job  {
 
     @Override
     public void doRun() throws JobInterruptException {
-        TutumService service = api.getServiceByName(String.valueOf(getJobContext().get("service")).trim());
-        String containerUrl = service.containers().get(0);
+        Map<String,var> action = getJobContext().get("action");
+        var service = action.get("service");
+        if(!service.string()) {
+            throw new JobParseException("The action should have a service field and it's value should be a string.");
+        }
+        TutumService tutumService = api.getServiceByName(String.valueOf(service).trim());
+        String containerUrl = tutumService.containers().get(0);
         TutumContainer container = api.getContainer(containerUrl);
-        TutumExecResponse response = api.exec(container, String.valueOf(getJobContext().get("command")).trim());
+        var command = action.get("command");
+        if(!command.string()) {
+            throw new JobParseException("The action should have a command field and it's value should be a string.");
+        }
+        TutumExecResponse response = api.exec(container, String.valueOf(command).trim());
         System.out.println(response);
     }
 }

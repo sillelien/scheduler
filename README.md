@@ -24,7 +24,7 @@ Please use a tagged version:
 FROM sillelien/scheduler:0.0.58
 ```
 
-## Creating a Schedule
+## Setting Up
 
 Sillelien Scheduler, uses [Sillelien Configurator](https://github.com/sillelien/configurator) to configure schedules. Configurator is simply a combination of a git repository and an editor to allow you to alter config in Docker images in a sensible and permanent manner.
 
@@ -67,6 +67,25 @@ Here you can see the three parts: the Configurator server, the Configurator edit
 When you first start up this docker-compose arrangement Scheduler will create the appropriate directories and files for you to use.
 
 [![Deploy to Tutum](https://s.tutum.co/deploy-to-tutum.svg)](https://dashboard.tutum.co/stack/deploy/)
+
+## Creating a Job
+
+Scheduler schedules Jobs, these jobs are read from a YAML file. An example schedule is:
+
+```
+date_job:
+  cron: "* * * * *"
+  action: 
+    type: tutum_exec
+    service: "test"
+    command: "date"
+```
+
+Currently the supported action types are `tutum_exec` only. 
+
+### tutum_exec
+
+The action should contain `type: tutum_exec`, the service field is the name of the Tutum service to use and the command is the command string to be executed on that service.
 
 ## Badges
 
